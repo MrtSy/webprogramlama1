@@ -19,7 +19,7 @@ Uyarı: Bu içerik, SCÜ Şarkışla UBYO Web Programlama I dersi kapsamında ta
 ---
 
 ## 🔗 Canlı Site
-- Canlı Demo: https://MrtSy.github.io/Hafta_10_SBMimari/ (veya ilgili GitHub Pages adresi)
+- Canlı Demo: [Web Forms Demo Arayüzü]( https://mrtsy.github.io/webprogramlama1/Hafta_10_SBMimari/3-uygulama/form-demo.html )
 
 ---
 
