@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sahne 2 — Sessiz Hata</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            background: #f4f6f8;
+        }
+
+        .box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 450px;
+        }
+
+        input.invalid {
+            border: 2px solid red;
+            background: #ffe6e6;
+        }
+
+        .error-msg {
+            color: red;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Sahne 2: Kırmızı Mesaj Nerede?</h2>
+        <p>Sunucu koduna geçersiz bir format (örn: <code>abc</code>) yazıp alandan çıkın (blur).</p>
+        <form novalidate>
+            <div class="form-group">
+                <label>Sunucu Kodu:</label><br>
+                <input type="text" id="sunucuKodu" pattern="^SRV-[0-9]{4}$" placeholder="SRV-1024">
+                <!-- <span class="error-msg"></span> -->
+                <!-- KASITLI HATA: <span class="error-msg"></span> etiketi buraya konulmadı! -->
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

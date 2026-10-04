@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sahne 1 — Dosya Neden Gitmiyor?</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2rem;
+            background: #f4f6f8;
+        }
+
+        .box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            max-width: 450px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Sahne 1: Log Dosyası Yükleme</h2>
+        <p>Dosyayı seçip "Gönder"e basın. Adres çubuğuna (URL) dikkat edin!</p>
+        <!-- KASITLI HATA: method GET ve enctype eksik -->
+        <form action="" method="GET">
+            <label>Log Dosyası (.log, .txt):</label><br><br>
+            <input type="file" name="sunucuLog" required><br><br>
+            <button type="submit">Gönder</button>
+        </form>
+    </div>
+</body>
+
+</html>
