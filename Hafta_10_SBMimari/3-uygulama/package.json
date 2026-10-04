@@ -1,0 +1,16 @@
+{
+  "name": "hafta_10_sbmimari",
+  "version": "1.0.0",
+  "description": "",
+  "main": "form-demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node npm-demo.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}

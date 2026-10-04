@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Mimarları — Web Forms & Tooling Demo</title>
+    <!-- Hazırladığın stil dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="form-demo.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1>Sistem Operasyon Bildirim Formu</h1>
+        <p>MDN Web Forms & Client-Side Tooling Mimarisi</p>
+    </header>
+
+    <main class="container">
+        <form id="mesajFormu" action="#" method="POST" enctype="multipart/form-data" novalidate>
+            <!-- 1. Grup: Kimlik Bilgileri -->
+            <fieldset>
+                <legend>Operatör Kimliği</legend>
+
+                <div class="form-group">
+                    <label for="adiniz">Ad Soyad: <span class="required">*</span></label>
+                    <input type="text" id="adiniz" name="adiniz" placeholder="Örn: Mert Özsoy" required minlength="3"
+                        autocomplete="name">
+                    <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="eposta">E-posta Adresi: <span class="required">*</span></label>
+                    <input type="email" id="eposta" name="eposta" placeholder="ad@ornek.com" required
+                        autocomplete="email">
+                    <span class="error-msg" aria-live="polite"></span>
+                </div>
+            </fieldset>
+
+            <!-- 2. Grup: Görev ve Sistem Bilgileri -->
+            <fieldset>
+                <legend>Sistem Detayları</legend>
+
+                <div class="form-group">
+                    <label for="sunucuKodu">Sunucu Kimliği (Format: SRV-XXXX): <span class="required">*</span></label>
+                    <input type="text" id="sunucuKodu" name="sunucuKodu" placeholder="SRV-2026" pattern="^SRV-[0-9]{4}$"
+                        title="SRV- ardından 4 haneli rakam giriniz (Örn: SRV-1024)" required>
+                    <span class="error-msg" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="oncelik">Operasyon Önceliği:</label>
+                    <select id="oncelik" name="oncelik">
+                        <option value="dusuk">Düşük (Rutin Kontrol)</option>
+                        <option value="orta" selected>Orta (Bakım & Güncelleme)</option>
+                        <option value="yuksek">Kritik (Acil Müdahale)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="raporDosyasi">Sistem Log Dosyası (.log, .txt):</label>
+                    <input type="file" id="raporDosyasi" name="raporDosyasi" accept=".log,.txt">
+                    <small>Maksimum 2MB. enctype="multipart/form-data" ile taşınır.</small>
+                </div>
+            </fieldset>
+
+            <div class="form-actions">
+                <button type="submit" id="btnGonder">Operasyonu Başlat (Submit)</button>
+                <button type="reset" id="btnSifirla">Temizle</button>
+            </div>
+        </form>
+
+        <!-- Canlı Payload Paneli -->
+        <section id="terminalOutput" class="terminal-panel" hidden>
+            <h3>📡 İstemci Tarafı (Client-Side) İletim Analizi</h3>
+            <p><strong>HTTP Yöntemi:</strong> <span class="badge">POST</span></p>
+            <p><strong>MIME Türü:</strong> <code>multipart/form-data</code></p>
+            <pre><code id="payloadView">// Form verileri yakalandığında buraya yazılacak...</code></pre>
+        </section>
+    </main>
+</body>
+
+</html>
